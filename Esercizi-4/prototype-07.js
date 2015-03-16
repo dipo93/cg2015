@@ -12,13 +12,13 @@
 		this.showPictures = function(person) {
 			var result = [];
 			for(var i=0; i<this.album.length; i++){	//i scorre le foto
-				for(var j=0; j<i.tags.length; j++){	//j scorre i nomi delle persone
-					if(j === person){
-						result.push(i.name);
+				for(var j=0; j<this.album[i].tags.length; j++){	//j scorre i nomi delle persone
+					if(this.album[i].tags[j] === person){
+						result.push(this.album[i].name);
 					}
 				}
 			}
-			console.log(result.reduce(prev, curr) { return prev + ", " + curr; });
+			console.log(result.reduce(function(prev, curr) { return prev + ", " + curr; }));
 		}
 	}
 
@@ -27,7 +27,7 @@
 		this.tags = [];
 		this.tag = function(person) { this.tags.push(person); }
 		this.showTags = function() {
-			console.log(this.tags.reduce(prev, curr) { return prev + ", " + curr; });
+			console.log(this.tags.reduce(function(prev, curr) { return prev + ", " + curr; }));
 		}
 	}
 
