@@ -10,8 +10,8 @@
 		this.album = [];
 	}
 
-	Photo.prototype.addPicture = function(pic) { this.album.push(pic); }
-	Photo.prototype.showPictures = function(person) {
+	PhotoAlbum.prototype.addPicture = function(pic) { this.album.push(pic); }
+	PhotoAlbum.prototype.showPictures = function(person) {
 		var result = [];
 		for(var i=0; i<this.album.length; i++){	//i scorre le foto
 			for(var j=0; j<this.album[i].tags.length; j++){	//j scorre i nomi delle persone
