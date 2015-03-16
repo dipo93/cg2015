@@ -7,36 +7,36 @@
 	
 	function MusicBox() {
 		this.albumCollection = [];
-		
-		this.addAlbum = function(album) {
-			this.albumCollection.push(album);
-		}
-		
-		this.favoriteAlbum = function() {
-			var fav;
-			var maxPlayed = 0;
-			for(var i=0; i<this.albumCollection.length; i++){
-				if(this.albumCollection[i].played > maxPlayed){
-					maxPlayed = this.albumCollection[i].played;
-					fav = this.albumCollection[i];
-				}
-			}
-			return fav.toString();
-		}
+	}	
+
+	MusicBox.prototype.addAlbum = function(album) {
+		this.albumCollection.push(album);
 	}
+		
+	MusicBox.prototype.favoriteAlbum = function() {
+		var fav;
+		var maxPlayed = 0;
+		for(var i=0; i<this.albumCollection.length; i++){
+			if(this.albumCollection[i].played > maxPlayed){
+				maxPlayed = this.albumCollection[i].played;
+				fav = this.albumCollection[i];
+			}
+		}
+		return fav.toString();
+	}
+	
 
 	function Album(artist, name) {
 		this.artist = artist;
 		this.name = name;
 		this.played = 0;
-		
-		this.play = function() {
-			this.played++;
-			console.log("Playing " + this.artist + " - " + this.name + ", played " + this.played + " times");
-		}
-
-		this.toString = function() { return this.artist + " - " + this.name; }
 	}
+
+	Album.prototype.play = function() {
+		this.played++;
+		console.log("Playing " + this.artist + " - " + this.name + ", played " + this.played + " times");
+	}
+	
 
 	// Write your code here ^
 

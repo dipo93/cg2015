@@ -11,7 +11,7 @@
   };
 
   var x = {name: "x", age:23, size: 11, city:"Rome"}; // write code here
-  var y = {occupation: "egineer", size: 44}; // write code here
+  var y = {occupation: "engineer", size: 44}; // write code here
 
   larger(x, y);
 }());

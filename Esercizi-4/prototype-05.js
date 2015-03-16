@@ -5,8 +5,12 @@
 
 function Bingo() {
 	this.secretNumber = Math.floor(Math.random() * 9 + 1);
-	this.guess = function(number) { return this.secretNumber === number; }
 }
+
+Bingo.prototype.guess = function(number) { 
+	return this.secretNumber === number;
+}
+
 
 var b = new Bingo();
 b.guess(7);

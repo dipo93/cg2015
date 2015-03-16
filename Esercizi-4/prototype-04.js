@@ -4,12 +4,16 @@
 (function () {
 	var person = {
 		// fill code here
-		buy: function(car) { console.log("I'm rich");}
+		buy: function(car) {
+			console.log("I'm rich");
+		}
 	};
 
 	var  car = {
 		// fill code here
-		drive: function() { console.log("Vrum Vrum"); },
+		drive: function() {
+			console.log("Vrum Vrum");
+		},
 		price: 1500
 	};
 

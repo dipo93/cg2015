@@ -8,28 +8,33 @@
 	
 	function PhotoAlbum() {
 		this.album = [];
-		this.addPicture = function(pic) { this.album.push(pic); }
-		this.showPictures = function(person) {
-			var result = [];
-			for(var i=0; i<this.album.length; i++){	//i scorre le foto
-				for(var j=0; j<this.album[i].tags.length; j++){	//j scorre i nomi delle persone
-					if(this.album[i].tags[j] === person){
-						result.push(this.album[i].name);
-					}
+	}
+
+	Photo.prototype.addPicture = function(pic) { this.album.push(pic); }
+	Photo.prototype.showPictures = function(person) {
+		var result = [];
+		for(var i=0; i<this.album.length; i++){	//i scorre le foto
+			for(var j=0; j<this.album[i].tags.length; j++){	//j scorre i nomi delle persone
+				if(this.album[i].tags[j] === person){
+					result.push(this.album[i].name);
 				}
 			}
-			console.log(result.reduce(function(prev, curr) { return prev + ", " + curr; }));
 		}
+		console.log(result.reduce(function(prev, curr) { return prev + ", " + curr; }));
 	}
+	
 
 	function Photo(name) {
 		this.name = name;
 		this.tags = [];
-		this.tag = function(person) { this.tags.push(person); }
-		this.showTags = function() {
-			console.log(this.tags.reduce(function(prev, curr) { return prev + ", " + curr; }));
-		}
 	}
+
+	Photo.prototype.tag = function(person) { this.tags.push(person); }
+	
+	Photo.prototype.showTags = function() {
+		console.log(this.tags.reduce(function(prev, curr) { return prev + ", " + curr; }));
+	}
+	
 
 	// Code goes here ^
 

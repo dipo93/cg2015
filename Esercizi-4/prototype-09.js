@@ -5,20 +5,21 @@ function Triangle(edge1, edge2, edge3) {
 	this.ab = edge1;
 	this.bc = edge2;
 	this.ca = edge3;
-
-	/* esercizio 9a */
-	/* funzione perimeter che calcola il perimetro del triangolo */
-	function perimeter() {
-		return this.ab.length() + this.bc.length() + this.ca.length();
-	}
-
-	/* esercizio 9b */
-	/* funzione area che calcola l'area del triangolo */
-	function area() {
-		var p = this.perimeter/2;
-		return Math.sqrt(p * (p - this.ab) * (p - this.bc) * (p - this.ca) );
-	}
 }
+
+/* esercizio 9a */
+/* funzione perimeter che calcola il perimetro del triangolo */
+Triangle.prototype.perimeter = function() {
+	return this.ab.length() + this.bc.length() + this.ca.length();
+}
+
+/* esercizio 9b */
+/* funzione area che calcola l'area del triangolo */
+Triangle.prototype.area = function() {
+	var p = this.perimeter/2;
+	return Math.sqrt(p * (p - this.ab) * (p - this.bc) * (p - this.ca) );
+}
+
 
 
 
@@ -33,10 +34,10 @@ function Edge(a, b) {
 	this.b = b;
 }
 
-function length(edge) {
-	var a = edge.a, b = edge.b;
-
-	return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
+Edge.prototype.length = function() {
+	return Math.sqrt(Math.pow(this.a.x - this.b.x, 2) + 
+		Math.pow(this.a.y - this.b.y, 2));
 }
+
 
 
